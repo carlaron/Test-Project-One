@@ -53,6 +53,46 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+App::missing(function($exception)
+{
+	//get URI for display on 404 page
+	$uri = Request::path();
+	
+	//params to pass on to page template
+	$params = array(
+	'uri'=>$uri,
+	'login_area'=>"",
+	'error_dialog'=>"",
+	'message_dialog'=>"",
+	'docready_js'=>""
+	);
+
+	//if this is a client account page URI
+	if(is_dir(app_path().'/views/accounts/'.Request::segment(1))){
+		$account = Account::where('acct_folder','=',Request::segment(1))->first();
+		$params = array(
+		'account' => $account,
+		'login_area'=>"",
+		'error_dialog'=>"",
+		'message_dialog'=>"",
+		'docready_js'=>""
+		);
+		$layout_404 = View::make('accounts.'.Request::segment(1).'.page_tpl',$params);
+		return $layout_404->nest('content', 'error.404',array('uri'=>$uri));
+	//else if this is a regular non-client-account page URI
+	} else {
+		$layout_404 = View::make('home.page_tpl');
+		return $layout_404->nest('content', 'error.404',array('uri'=>$uri));
+	}
+});
+
+/*
+App::missing(function($exception)
+{
+    return "Page not found... Added this 'missing' handler but to /start/global... not sure if that's a really where it should be. This should already exist somewhere else, but Laravel 4 seems to not really be close to done.";
+});
+*/
+
 /*
 |--------------------------------------------------------------------------
 | Require The Filters File

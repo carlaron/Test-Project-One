@@ -16,7 +16,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'cookie',
+	'driver' => 'database',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return array(
 	|
 	*/
 
-	'files' => storage_path().'/sessions',
+	'files' => __DIR__.'/../storage/sessions',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ return array(
 	|
 	*/
 
-	'connection' => null,
+	'connection' => 'mysql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -68,7 +68,7 @@ return array(
 	|
 	*/
 
-	'table' => 'sessions',
+	'table' => 'php_sessions',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -94,7 +94,7 @@ return array(
 	|
 	*/
 
-	'cookie' => 'laravel_session',
+	'cookie' => 'eportal_session',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -120,7 +120,7 @@ return array(
 	|
 	*/
 
-	'domain' => null,
+	'domain' => '.eportal.commpartners.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -133,6 +133,6 @@ return array(
 	|
 	*/
 
-	'payload' => 'laravel_payload',
+	'payload' => 'eportal_payload',
 
 );

@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'America/New_York',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => 'WhateverTheFuck',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -79,18 +79,18 @@ return array(
 		'Illuminate\Encryption\EncryptionServiceProvider',
 		'Illuminate\Filesystem\FilesystemServiceProvider',
 		'Illuminate\Hashing\HashServiceProvider',
-		'Illuminate\Html\HtmlServiceProvider',
+		'Illuminate\Html\HtmlServiceProvider', //
 		'Illuminate\Foundation\Providers\KeyGeneratorServiceProvider',
 		'Illuminate\Log\LogServiceProvider',
 		'Illuminate\Mail\MailServiceProvider',
 		'Illuminate\Database\MigrationServiceProvider',
-		'Illuminate\Foundation\Providers\OptimizeServiceProvider',
+		'Illuminate\Foundation\Providers\OptimizeServiceProvider', //
 		'Illuminate\Pagination\PaginationServiceProvider',
 		'Illuminate\Foundation\Providers\PublisherServiceProvider',
 		'Illuminate\Queue\QueueServiceProvider',
 		'Illuminate\Redis\RedisServiceProvider',
 		'Illuminate\Auth\Reminders\ReminderServiceProvider',
-		'Illuminate\Foundation\Providers\RouteListServiceProvider',
+		'Illuminate\Foundation\Providers\RouteListServiceProvider', //
 		'Illuminate\Database\SeedServiceProvider',
 		'Illuminate\Foundation\Providers\ServerServiceProvider',
 		'Illuminate\Session\SessionServiceProvider',
@@ -113,7 +113,9 @@ return array(
 	|
 	*/
 
-	'manifest' => storage_path().'/meta',
+	//'manifest' => storage_path().'/meta',
+	'manifest' => __DIR__.'/../storage/meta',
+
 
 	/*
 	|--------------------------------------------------------------------------

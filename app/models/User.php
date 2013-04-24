@@ -10,7 +10,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var string
 	 */
-	protected $table = 'users';
+	protected $table = 'users_laravel';
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -36,7 +36,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	public function getAuthPassword()
 	{
-		return $this->password;
+		return $this->user_password;
 	}
 
 	/**
@@ -46,7 +46,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	public function getReminderEmail()
 	{
-		return $this->email;
+		return $this->user_email;
 	}
 
 }

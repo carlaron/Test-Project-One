@@ -1,10 +1,36 @@
-<IfModule mod_rewrite.c>
-    Options -MultiViews
-    RewriteEngine On
+Options -MultiViews +FollowSymLinks
+RewriteEngine On
 
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteRule ^(.+)/$ http://%{HTTP_HOST}/$1 [R=301,L]
+## FORCE SSL / 443
+RewriteCond %{SERVER_PORT} !^443$
+ ##do not force SSL for view pages or admin login redirect and a few others
+ #RewriteCond %{REQUEST_URI} !^(.*)view.php(.*)?
+ #RewriteCond %{REQUEST_URI} !^(.*)adminlogin.php(.*)?
+ #RewriteCond %{REQUEST_URI} !^(.*)ztest(.*)?
+ #RewriteCond %{REQUEST_URI} !^(.*)download(.*)?
+ #RewriteCond %{REQUEST_URI} !^(.*)users_role_update(.*)?
+ #RewriteCond %{REQUEST_URI} !^(.*)ec_upload(.*)?
+RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [R,L]
 
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
-</IfModule>
+# handle custom client domain foo.eportal.commpartners.com
+RewriteCond %{HTTP_HOST} ^foo.eportal.commpartners.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/accounts [NC]
+RewriteCond %{REQUEST_URI} !^/css [NC]
+RewriteCond %{REQUEST_URI} !^/images [NC]
+RewriteCond %{REQUEST_URI} !^/js [NC]
+RewriteCond %{REQUEST_URI} !^/php411 [NC]
+RewriteRule ^(.*)$ https://l4.eportal.commpartners.com/foo/$1 [P,L]
+
+# handle custom client domain demo.eportal.commpartners.com
+RewriteCond %{HTTP_HOST} ^demo.eportal.commpartners.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/accounts [NC]
+RewriteCond %{REQUEST_URI} !^/css [NC]
+RewriteCond %{REQUEST_URI} !^/images [NC]
+RewriteCond %{REQUEST_URI} !^/js [NC]
+RewriteRule ^(.*)$ https://l4.eportal.commpartners.com/demo/$1 [P,L]
+
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.+)/$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
