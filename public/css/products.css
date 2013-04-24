@@ -1,0 +1,145 @@
+/* Page-specific tab styling */
+#tabs {
+	width: 600px;
+	float: left;
+	}
+#tabs p:last-child {
+	margin-bottom: 0;
+	}
+
+/* Right-hand assets column */
+#assets {
+	width: 340px;
+	float: right;
+	margin-top: -10px;
+	}
+	.asset {
+		margin: 10px;
+		padding: 10px;
+		border-radius: 2px;
+		border: 1px solid #CCC;
+		}
+		.asset .title {
+			font-weight: bold;
+			display: block;
+			margin-bottom: 5px;
+			}
+		.asset .description {
+			display: block;
+			font-size: 10px;
+			}
+		.asset .file:last-child {
+			margin-bottom: 0;
+			}
+
+/* Speakers tab */
+.speaker {
+	margin: 10px 0;
+	padding: 10px 0px 20px 120px;
+	border-bottom: 1px dotted #DDD;
+	}
+	.speaker:first-child {
+		padding-top: 0;
+		}
+	.speaker:last-child {
+		border: 0;
+		padding-bottom: 0;
+		}
+	.speaker .photo {
+		float: left;
+		border: 1px solid #CCC;
+		margin-left: -120px;
+		width: 100px;
+		height: 100px;
+		background-image: url(/images/default_avatar.jpg);
+		}
+	.speaker .name {
+		font-size: 22px;
+		font-weight: bold;
+		margin: -3px 0 5px;
+		}
+	.speaker .title {
+		font-size: 16px;
+		margin: 0 0 5px;
+		color: #444;
+		font-style: italic;
+		}
+	.speaker .bio {
+		padding: 0;
+		margin: 0 0 10px;
+		}
+		.speaker .bio:last-child {
+			margin-bottom: 0;
+			}
+
+/* Resources/Handouts tab */
+a.file {
+	display: block;
+	border: 1px solid #CCE;
+	border-bottom: 0;
+	background-color: #FAFAFF;
+	padding: 10px 10px 10px 35px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	background-image: url(/images/icons/document.png);
+	margin: 0;
+	text-decoration: none;
+	}
+	a.file:hover {
+		border: 1px solid #AAC;
+		border-bottom: 0;
+		background-color: #EEF;
+		text-decoration: underline;
+		}
+	a.file:last-child {
+		border-bottom: 1px solid #CCE;
+		}
+
+/* File types */
+.file.txt { background-image: url(/images/icons/document-text.png); }
+.file.pdf { background-image: url(/images/icons/document-pdf.png); }
+.file.exe { background-image: url(/images/icons/document-binary.png); }
+.file.ai  { background-image: url(/images/icons/document-illustrator.png); }
+.file.psd { background-image: url(/images/icons/document-photoshop.png); }
+.file.php { background-image: url(/images/icons/document-php.png); }
+.file.mp3 { background-image: url(/images/icons/document-music.png); }
+.file.flv { background-image: url(/images/icons/document-flash-movie.png); }
+.file.ppt { background-image: url(/images/icons/document-powerpoint.png); }
+.file.xls, .file.xlsx { background-image: url(/images/icons/document-excel.png); }
+.file.doc, .file.docx { background-image: url(/images/icons/document-word.png); }
+.file.7z, .file.gz, .file.zip, .file.rar { background-image: url(/images/icons/document-zipper.png); }
+.file.gif, .file.png, .file.jpeg, .file.tif, .file.tiff, .file.jpg { background-image: url(/images/icons/document-image.png); }
+
+/* Discussion thread */
+.comment-list li {
+	list-style-type: none;
+	margin: 10px 0;
+	padding: 5px;
+	border: 1px solid #EFEFEF;
+	}
+.comment-content {
+	margin: 10px 0;
+	}
+.comment-author * {
+	font-weight: bold;
+	font-size: 14px;
+	font-style: normal !important;
+	}
+.comment-meta {
+	font-size: 11px;
+	text-decoration: none;
+	color: #888;
+	}
+.comment-reply-link {
+	font-size: 10px;
+	}
+.depth-1,
+.depth-3 {
+	background-color: #FAFAFA;
+	}
+.depth-2,
+.depth-4 {
+	background-color: #EFEFEF;
+	}
+
+

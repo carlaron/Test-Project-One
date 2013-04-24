@@ -1,0 +1,4 @@
+.text input { height:32px; }
+.disabled { filter:alpha(opacity=70); }
+.button *, .submit *, .reset * { height:34px; }
+.file { width:300px; }

@@ -1,0 +1,97 @@
+.plumform * {
+	outline: 0;
+}
+
+button {
+	border: 0 !important;
+}
+
+
+.button img,
+.reset img,
+.submit img {
+	height: 16px;
+	width: 16px;
+	position: relative;
+	top: 3px;
+	padding: 0;
+	margin-right: 3px;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+/* add new task button */
+button.plumform {
+	font-weight: bold;
+	}
+button.plumform:hover {
+	color: #000 !important;
+	text-decoration: underline;
+	}
+button.plumform img {
+	margin-top: -7px;
+	margin-left: -2px;
+	margin-right: 5px;
+	}
+.plum-form.submit {
+	margin: 0;
+	}
+
+/* plum form styling */
+li.option {
+	margin-left: 0;
+	}
+.plum-form.select {
+	margin: 0;
+	}
+	.select-arrow {
+		border-radius: 0;
+	}
+.select-value:hover {
+	background-color: #888 !important;
+	color: #FFF;
+	}
+.option.selected {
+	background-color: #555 !important;
+	color: #FFF;
+	}
+
+
+.checkbox {
+	margin: 2px 6px 2px 2px;
+	vertical-align: -5px;
+}
+
+
+.link_button {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background-color: #E6E6E6;
+	border: 1px outset #CCC;
+	border-radius: 4px;
+	color: #555;
+	cursor: pointer;
+	display: inline-block;
+	height: 26px;
+	line-height: 26px;
+	margin: 0;
+	padding: 0 10px;
+	text-decoration: none;
+	text-transform: none;
+	white-space: nowrap;
+	}
+	.link_button:hover {
+		background-color: #D6D6D6;
+		border-color: #999;
+		color: #555;
+		}
+	.link_button img {
+		height: 16px;
+		width: 16px;
+		display: inline-block;
+		vertical-align: text-top;
+		margin: 0 7px 0 -2px;
+		}
+
+

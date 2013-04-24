@@ -1,0 +1,7 @@
+.info.success, .info.error, .checkbox, .radio,
+.text, .textarea, .button, .submit, .reset,
+.select.single .select-value, .select.single .select-arrow,
+.file .remove, .file .progress, .file .progress div {
+	background-image:url(images/dark-blue-ui.png);
+}
+.option:hover { background:#3f88b6; }

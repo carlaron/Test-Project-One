@@ -1,0 +1,42 @@
+
+/* standard elements */
+h2 {
+	margin-top: 15px;
+	margin-bottom: 5px;
+	}
+p.description {
+	font-size: 16px;
+	background-color: #E9E9E9;
+	border-radius: 5px;
+	padding: 10px 15px;
+	margin: 10px;
+	line-height: 22px;
+	}
+hr {
+	width: 95%;
+	background-image: -webkit-radial-gradient(50% -5px, 55% 15px, #DDD 0%, white 100%);
+	padding: 0 0 15px 0;
+	margin: 20px 0 10px 30px;
+	border-top: 1px solid #D2D2D2;
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+	}
+
+table td label:hover {
+	background-color: #EFEFEF;
+}
+
+table label {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background-color: #FFF;
+	border-radius: 4px;
+	display: block;
+	line-height: 16px;
+	padding: 6px 3px 6px 6px;
+	width: 115px;
+	margin-right: 5px;
+}
+
+

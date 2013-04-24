@@ -1,0 +1,200 @@
+
+.actions .link_button {
+	margin-right: 10px;
+}
+
+/* Product Management List */
+#products_list th {
+	background: #000;
+	color: #FFF;
+	font-weight: bold;
+	padding: 2px 4px;
+	}
+#products_list {
+	width: 100%;
+	}
+#products_list td {
+	padding: 10px 4px 4px;
+	border-bottom: 1px dashed #CCC;
+	}
+	#products_list td .link_button {
+		margin-right: 10px;
+		}
+#products_list tr:hover {
+	background-color: #EFEFEF;
+	}
+#products_list .product_title {
+	margin-bottom: 0;
+}
+#products_list .product_actions {
+	margin: 4px 0 8px;
+}
+.extra_info {
+	margin-bottom: 10px;
+}
+
+
+
+/* Product Pricing and Access dialog */
+#product_settings {
+	width: 55%;
+	float: left;
+	}
+#product_settings textarea {
+	width: 100%;
+	height: 80px;
+}
+
+#product_access {
+	width: 42%;
+	float: right;
+	}
+#product_access td {
+	vertical-align: middle;
+	}
+#product_access td label {
+	width: 100%;
+	line-height: 28px;
+	}
+#product_access td input {
+	float: right;
+	}
+#product_access td .checkbox {
+	margin-top: 5px;
+	}
+
+
+/* Users Management Console */
+#users th {
+	background: #000;
+	color: #FFF;
+	font-weight: bold;
+	padding: 2px 4px;
+	}
+#users {
+	width: 100%;
+	}
+#users td {
+	padding: 4px 4px;
+	}
+#users tr:hover {
+	background-color: #EFEFEF;
+	}
+
+
+/* Product Assets Management Console */
+#product_assets {
+	width: 100%;
+	padding: 0;
+	margin: 0 0 10px;
+	}
+#product_assets li.product_asset {
+	padding: 4px 2px;
+	vertical-align: middle;
+	list-style-type: none;
+	margin: 3px;
+	height: 28px;
+	border-radius: 5px;
+	border: 1px solid #FAFAFA;
+	background: #FAFAFA;
+	}
+#product_assets li.product_asset_placeholder {
+	padding: 4px 2px;
+	list-style-type: none;
+	margin: 3px;
+	height: 28px;
+	border-radius: 5px;
+	border: 1px dashed #999;
+	background: #FFF;
+	}
+
+	.asset_move,
+	.asset_main,
+	.asset_requires,
+	.asset_actions {
+		float: left;
+		display: inline-block;
+		height: 28px;
+		line-height: 28px;
+	}
+
+	.asset_move     { width: 28px; cursor: move; }
+	.asset_move img { position: relative; top: 6px; left: 5px; }
+	.asset_main     { width: 30%; }
+	.asset_requires { width: 28%; }
+	.asset_actions  { width: 32%; }
+
+	.asset_actions a.link_button {
+		margin-right: 6px;
+	}
+
+	.asset_title,
+	.asset_type {
+		line-height: 16px;
+		display: block;
+	}
+	.asset_type {
+		font-size: 10px;
+		color: #888;
+	}
+
+#product_assets li:hover {
+	background-color: #EFEFEF;
+	}
+
+
+/* Tasks Listing */
+.task_item {
+	padding: 7px 5px 8px 7px;
+	margin: -1px;
+	border: 1px solid #FFF;
+	border-radius: 5px;
+	}
+	.task_item:hover {
+		background-color: #EFEFEF;
+		}
+.task_text {
+	position: relative;
+	top: 2px;
+	font-size: 14px;
+	}
+.task_owner,
+.task_status {
+	float: right;
+	}
+/* task listing icons */
+.task_icon {
+	margin-right: 5px;
+	cursor: help;
+	}
+.loading_icon {
+	float: right;
+	margin-right: 0px;
+	display: none;
+	}
+
+
+/* Product Publishing Status */
+#product_status_tables {
+	width: 100%;
+	}
+#product_status_tables td,
+#product_status_tables th {
+	vertical-align: middle;
+	padding: 5px;
+	background: #EFEFEF;
+	border-top: 1px solid #FFF;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	}
+#product_status_tables td:first-child {
+	width: 110px;
+	background-color: #DFDFDF;
+	}
+#product_status_tables th {
+	background-color: #CCC !important;
+	}
+
+
+

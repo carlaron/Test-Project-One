@@ -1,0 +1,207 @@
+/** UI image */
+.button *, .submit *, .reset *,
+.checkbox, .radio, .select.single .select-value, .select .select-arrow {
+	background-image:url(/js/plumform-1.5.2/skins/default/images/ui.png);
+}
+
+/** global set up */
+.plum-form { border:1px solid #ccc; margin:0 5px 5px 0; }
+.plum-form :focus, .select.single.open.focus { outline:0; }
+.plum-form, .text *, .textarea *, .button *, .submit *, .reset * {
+	color:#000;
+/*	display:inline-block; */
+	font:normal 12px/18px Helvetica, Arial, sans-serif;
+}
+.focus { outline:1px dotted #aaa; }
+
+/** in-field labels */
+.plum-form .label {
+	background:none;
+	border:0;
+	color:#aaa;
+	cursor:text;
+	line-height:26px;
+	padding:0 2px;
+}
+.plum-form.textarea .label {
+	line-height:18px;
+	padding:2px;
+}
+
+/** validation */
+.plum-form .info {
+	background:none;
+	border:0;
+	height:16px;
+	padding:0;
+	position:absolute;
+	right:-24px;
+	top:6px;
+	width:16px;
+}
+.plum-form.invalid { border:1px solid #f00; }
+.info.success { background:url(/js/plumform-1.5.2/skins/default/images/success.png) no-repeat; }
+.info.error { background:url(/js/plumform-1.5.2/skins/default/images/error.png) no-repeat; }
+
+/** :text, :textarea */
+.text, .textarea { background-color:#f5f5f5; }
+.text input, .textarea textarea {
+	background:none;
+	border:1px solid #fff;
+	line-height:18px;
+	margin:0;
+	padding:0 5px;
+}
+.text input { height:26px; }
+.textarea textarea { line-height:18px; padding:1px 5px; }
+
+/** :checkbox, :radio */
+.checkbox, .radio {
+	border:0;
+	height:16px;
+	margin:5px 2px -2px 0;
+	vertical-align:-2px;
+	width:16px;
+}
+.checkbox.checked { background-position:-16px 0; }
+.checkbox.mixed { background-position:-32px 0; }
+.checkbox.hover { background-position:0 -16px; }
+.checkbox.checked.hover { background-position:-16px -16px; }
+.checkbox.mixed.hover { background-position:-32px -16px; }
+.checkbox.disabled { background-position:0 -32px; }
+.checkbox.checked.disabled { background-position:-16px -32px; }
+.checkbox.mixed.disabled { background-position:-32px -32px; }
+.radio { background-position:-48px 0; }
+.radio.checked { background-position:-64px 0; }
+.radio.hover { background-position:-48px -16px; }
+.radio.checked.hover { background-position:-64px -16px; }
+.radio.disabled { background-position:-48px -32px; }
+.radio.checked.disabled { background-position:-48px -32px; }
+
+/** :select */
+.select { background:#f5f5f5; border:1px solid #ccc; cursor:pointer; }
+.select ul { list-style:none; margin:0; padding:0; }
+.select .select-container {
+	background:#f5f5f5;
+	padding:1px;
+}
+.select.single { padding:2px; }
+.select.single .select-value {
+	background-position:0 -68px;
+	height:20px;
+	line-height:20px;
+	padding:1px 0;
+}
+.select.single.open .select-container { border:1px solid #ccc; margin:-1px; }
+.select.single .select-value div:first-child { padding-left:5px; }
+.select.single .select-arrow {
+	background-position:0 -48px;
+	height:20px;
+	position:absolute;
+	right:1px;
+	top:1px;
+	width:20px;
+}
+
+/** :option, :optgroup */
+.option.selected, .select .select-value:hover { background:#9999ff; }
+.option, .optgroup label {
+	display:block;
+	height:18px;
+	padding:5px 6px;
+}
+.option { cursor:pointer; }
+.option:hover { background:#d5d5d5; }
+.optgroup label { font-size:11px; font-weight:bold; }
+.optgroup .option { padding-left:18px; }
+
+/** :disabled */
+.disabled { cursor:default; opacity:.7; }
+.disabled .option, .option.disabled {
+	background:transparent!important;
+	color:#888!important;
+	cursor:default;
+}
+
+/** :file */
+.file { border:0; }
+.file .button { float:left; }
+.file ul {
+	background:none;
+	float:left;
+	list-style:none;
+	margin:0;
+	padding:0;
+	min-width:250px;
+}
+.file li {
+	background-color:#f5f5f5!important;
+	border:1px solid #ccc;
+	margin:0 0 1px;
+	padding:3px 5px;
+	position:relative;
+}
+.file li * { background:none; border:0; }
+.file .filename { padding:0 5px 0 20px; }
+.file .error .filename, .file .error .filesize { color:#999; }
+.file .filesize { float:right; padding:0 15px 0 5px; }
+.file .remove { cursor:pointer; padding:0; position:absolute; right:6px; top:2px; }
+.file .progress { background:#d6d6d6; display:none; height:5px; margin:5px 0 2px; padding:0; }
+.file .progress div { background:#777; height:5px; padding:0; width:0; }
+.file .waiting { background:url(/js/plumform-1.5.2/skins/default/images/waiting.png) no-repeat 4px 4px; }
+.file .loading { background:url(/js/plumform-1.5.2/skins/default/images/loading.gif) no-repeat 4px 4px; }
+.file .error { background:url(/js/plumform-1.5.2/skins/default/images/error.png) no-repeat 4px 4px; }
+.file .error div { color:#a61616; font-weight:bold; }
+
+/** :button, :submit, :reset */
+.button, .reset, .submit { border:1px solid #bbb; padding:0; white-space:nowrap; }
+.button *, .reset *, .submit * {
+	background-image: url(/images/ui-bg_glass_75_e6e6e6_1x400.png);
+	color:#555;
+	cursor:pointer;
+	height:26px;
+	line-height:18px;
+	margin:0;
+	padding:0 10px;
+	text-transform:none;
+	width:auto;
+}
+.button ::-moz-focus-inner, .submit ::-moz-focus-inner, .reset ::-moz-focus-inner {
+	border:0;
+	padding:0;
+}
+.button:hover, .submit:hover { border-color:#999; }
+.button:hover *, .reset:hover *, .submit:hover * {
+	background-image: url(/images/ui-bg_glass_75_e6e6e6_1x400.png);
+	background-color:transparent;
+	border-color:#CCC;
+	color:#EB0;
+}
+.reset { border-color:#c58787; }
+.reset * { color:#fff; }
+.reset:hover { border-color:#9f5555; }
+.reset:hover * { border-color:#decccc; }
+
+/** CSS3 */
+.text *  {
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+.plum-form, .plum-form * {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+.option {
+	-moz-border-radius:0;
+	-webkit-border-radius:0;
+	border-radius:0;
+}
+.select.single.open .select-container {
+	-moz-box-shadow:0 0 15px #bbb;
+	-webkit-box-shadow:0 0 15px #bbb;
+	box-shadow:0 0 15px #bbb;
+}
+

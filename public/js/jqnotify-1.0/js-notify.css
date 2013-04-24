@@ -1,0 +1,48 @@
+
+	#jqnotifications {
+		width: 310px;
+		position: fixed;
+		right: 20px;
+		top: 20px;
+		opacity: 0.85;
+		z-index: 99;
+		color: #FFF;
+		height: 1px;
+		overflow: visible;
+		}
+		#jqnotifications div {
+			-moz-border-radius: 5px 5px 5px 5px;
+			-moz-box-shadow: 0 3px 3px #000000;
+			-webkit-border-radius: 5px 5px 5px 5px;
+			-webkit-box-shadow: 0 3px 3px #000000;
+			background: none repeat scroll 0 0 #222222;
+			width: auto;
+			padding: 11px;
+			margin: 0 0 10px 0;
+			float: left;
+			cursor: pointer;
+			}
+		#jqnotifications div p {
+			float: left;
+			width: 260px;
+			font-weight: bold;
+			margin: -1px 0px -3px 0px;
+			line-height: 16px;
+			overflow-x: hidden;
+			font-size: 13px;
+			}
+		#jqnotifications div .indicator {
+			float: left;
+			height: 16px;
+			width: 16px;
+			margin: 0 6px 0 0;
+			padding: 0;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			}
+
+		#jqnotifications .notify-info .indicator    { background-image: url(/images/icons/information-frame.png); }
+		#jqnotifications .notify-warning .indicator { background-image: url(/images/icons/exclamation-circle-frame.png); }
+		#jqnotifications .notify-failure .indicator { background-image: url(/images/icons/cross-circle-frame.png); }
+		#jqnotifications .notify-success .indicator { background-image: url(/images/icons/tick-circle-frame.png); }
+ 

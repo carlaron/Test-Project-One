@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>plum.Form - A jQuery styling tool</title>
+
+	<link rel="stylesheet" href="style.css">
+	<script>
+	if (window.location.search === '?dark') {
+		document.write('<link rel="stylesheet" href="../skins/dark/dark.css">');
+		document.write('<link id="dark-color" rel="stylesheet" href="../skins/dark/dark-' + window.location.hash.substring(1) + '.css">');
+		document.write('<!--[if IE 7]><link rel="stylesheet" href="../skins/dark/dark.ie7.css"><![endif]-->');
+		document.write('<style>'
+			+ '#main, #main p { color:#aaa; }'
+			+ '#main > div { background:#444; }'
+			+ '#main hr { border-color:#666; }'
+			+ '#main a:hover { color:#fff; }'
+			+ 'body { background:#444; color:#ccc; }'
+			+ 'hr { border-top-color:#666; }'
+			+ '</style>'
+		);
+	} else {
+		document.write('<link rel="stylesheet" href="../skins/default/default.css">');
+		document.write('<!--[if IE 7]><link rel="stylesheet" href="../skins/default/default.ie7.css"><![endif]-->');
+	}
+	</script>
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery.plum.form.js"></script>
+
+</head>
+<body>
+
+<div id="body" class="clear">
+	<div id="header">
+		<h1>Introducing <span>plum.Form</span></h1>
+		<h2>A jQuery plug-in that brings joy back into designing web forms</h2>
+	</div>
+	<div id="aside" class="left">
+		<h3>
+			When it comes to designing web forms, browsers can never agree on a
+			de facto standard. plum.Form was built to work around browser
+			limitations and give you complete control over the appearance of
+			your forms.
+		</h3>
+		<p>
+			Plum has 20 configuration options, including AJAX controls, in-field
+			labels and error handling for file uploads. Along with complete design
+			freedom, you also have the ability to validate form fields, adding an
+			extra layer of usability to your site.
+		</p>
+		<p>
+			It’s fast, it’s powerful, and it’s exquisitly packaged into a file
+			that's under 22 Kb. And if you use gzip, it’s under 7 Kb.
+		</p>
+
+		<hr>
+
+		<h3>
+			The limits of customization with plum.Form are only what you can imagine.
+			Each element can be styled by utilizing simple CSS classes. Plum comes
+			with two skins: the default skin and a dark skin with 5 colors.
+		</h3>
+		<p>
+			If the packaged skins don't appeal to you, that's no problem! You can create
+			your own from scratch, or try out some of our favorite web form elements on
+			GraphicRiver.
+		</p>
+		<ul>
+			<li><a href="http://graphicriver.net/item/gray-user-interface/548483">Gray User Interface</a>, by Kos9</li>
+			<li><a href="http://graphicriver.net/item/web-ui/534279">Web UI</a>, by RR3</li>
+			<li><a href="http://graphicriver.net/item/drawing-board-ui-kit/576543">Drawing Board UI Kit</a>, by laurik</li>
+		</ul>
+	</div>
+	<div id="main" class="right">
+		<div>
+
+			<form action="." method="post" enctype="multipart/form-data">
+			<div>
+
+				<p>Switch theme: &nbsp;
+				<a href="?default">Default</a> &nbsp; &bull; &nbsp;
+				Dark (<a href="?dark#blue">Blue</a>
+					/ <a href="?dark#green">Green</a>
+					/ <a href="?dark#orange">Orange</a>
+					/ <a href="?dark#red">Red</a>
+					/ <a href="?dark#pink">Pink</a>)</p>
+				<hr>
+
+				<h2>Keyboard navigation</h2>
+				<p>
+					Just as with a regular form, you can navigate through different elements with the keyboard.
+					Try using the space bar to select checkboxes and radio buttons, arrow keys in select menus,
+					and even typing an option in a select menu. The escape key will also close an open menu.
+				</p>
+
+				<hr>
+
+				<h2>AJAX-ready</h2>
+				<p>
+					Usually, jQuery plugins are less than optimal when it comes to running an AJAX website.
+					You need to use callback functions, wait for the content to finish loading, then call
+					the plugin again.
+				</p>
+				<p>
+					Plum was built with AJAX in mind. That means you call the plugin one time and any forms
+					you create on the fly will be given the power of Plum. Try it to see for yourself!
+				</p>
+				<button id="add-select" type="button">Add a select menu</button>
+				<button id="add-checkbox" type="button">Add a checkbox to "Group 1"</button>
+				<div id="ajax"></div>
+
+				<hr>
+
+				<h2>Checkboxes &amp; checkbox groups</h2>
+				<p>Checkbox groups can be created simply by adding a "check-all" class to each box you'd like to act as a handler.</p>
+				<div class="left grid-1-2">
+					<label><input class="check-all-group1[]" type="checkbox"> <strong>Check all boxes in group 1</strong></label><br>
+					<label><input name="group1[]" type="checkbox" value="group1-box-1"> Group 1, box 1</label><br>
+					<label><input name="ungrouped-1" type="checkbox" value="ungrouped-1"> Ungrouped box</label><br>
+					<label><input name="ungrouped-2" type="checkbox" value="ungrouped-2" disabled> Ungrouped box, disabled</label><br>
+					<label><input name="group1[]" type="checkbox" value="group1-box-2"> Group 1, box 2</label>
+				</div>
+				<div class="right grid-1-2">
+					<label><input class="check-all-group2[]" type="checkbox"> <strong>Check all boxes in group 2</strong></label><br>
+					<label><input name="group2[]" type="checkbox" value="group2-box-1"> Group 2, box 1</label><br>
+					<label><input name="group2[]" type="checkbox" value="group2-box-2"> Group 2, box 2</label><br>
+					<label><input name="group2[]" type="checkbox" value="group2-box-3" checked>Group 2, box 3, checked</label>
+				</div>
+				<div class="clear"></div>
+				<p>Group handlers can be placed anywhere.</p>
+				<label><input class="check-all-group1[]" type="checkbox"> <strong>Check all boxes in group 1</strong></label>
+
+				<hr>
+
+				<h2>Radio buttons</h2>
+				<div class="left grid-1-2">
+					<label><input name="radio1[]" type="radio" value="radio1-box-1"> Radio group 1, button 1</label><br>
+					<label><input name="radio1[]" type="radio" value="radio1-box-2"> Radio group 1, button 2</label><br>
+					<label><input name="radio1[]" type="radio" value="radio1-box-3" disabled> Radio group 1, button 3, disabled</label><br>
+				</div>
+				<div class="right grid-1-2">
+					<label><input name="radio2[]" type="radio" value="radio2-box-1"> Radio group 2, button 1</label><br>
+					<label><input name="radio2[]" type="radio" value="radio2-box-2"> Radio group 2, button 2</label>
+				</div>
+				<div class="clear"></div>
+
+				<hr>
+
+				<h2>Select menus</h2>
+				<p>A basic select-one menu with a list of countries</p>
+				<select id="countries" name="countries">
+					<option value="Select a country" selected>Select a country</option>
+					<option value="Afghanistan">Afghanistan</option>
+					<option value="Åland Islands">Åland Islands</option>
+					<option value="Albania">Albania</option>
+					<option value="Algeria">Algeria</option>
+					<option value="American Samoa">American Samoa</option>
+					<option value="Andorra">Andorra</option>
+					<option value="Angola">Angola</option>
+					<option value="Anguilla">Anguilla</option>
+					<option value="Antarctica">Antarctica</option>
+					<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+					<option value="Argentina">Argentina</option>
+					<option value="Armenia">Armenia</option>
+					<option value="Aruba">Aruba</option>
+					<option value="Australia">Australia</option>
+					<option value="Austria">Austria</option>
+					<option value="Azerbaijan">Azerbaijan</option>
+					<option value="Bahamas">Bahamas</option>
+					<option value="Bahrain">Bahrain</option>
+					<option value="Bangladesh">Bangladesh</option>
+					<option value="Barbados">Barbados</option>
+					<option value="Belarus">Belarus</option>
+					<option value="Belgium">Belgium</option>
+					<option value="Belize">Belize</option>
+					<option value="Benin">Benin</option>
+					<option value="Bermuda">Bermuda</option>
+					<option value="Bhutan">Bhutan</option>
+					<option value="Bolivia">Bolivia</option>
+					<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+					<option value="Botswana">Botswana</option>
+					<option value="Bouvet Island">Bouvet Island</option>
+					<option value="Brazil">Brazil</option>
+					<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+					<option value="Brunei Darussalam">Brunei Darussalam</option>
+					<option value="Bulgaria">Bulgaria</option>
+					<option value="Burkina Faso">Burkina Faso</option>
+					<option value="Burundi">Burundi</option>
+					<option value="Cambodia">Cambodia</option>
+					<option value="Cameroon">Cameroon</option>
+					<option value="Canada">Canada</option>
+					<option value="Cape Verde">Cape Verde</option>
+					<option value="Cayman Islands">Cayman Islands</option>
+					<option value="Central African Republic">Central African Republic</option>
+					<option value="Chad">Chad</option>
+					<option value="Chile">Chile</option>
+					<option value="China">China</option>
+					<option value="Christmas Island">Christmas Island</option>
+					<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+					<option value="Colombia">Colombia</option>
+					<option value="Comoros">Comoros</option>
+					<option value="Congo">Congo</option>
+					<option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+					<option value="Cook Islands">Cook Islands</option>
+					<option value="Costa Rica">Costa Rica</option>
+					<option value="Cote D'ivoire">Cote D'ivoire</option>
+					<option value="Croatia">Croatia</option>
+					<option value="Cuba">Cuba</option>
+					<option value="Cyprus">Cyprus</option>
+					<option value="Czech Republic">Czech Republic</option>
+					<option value="Denmark">Denmark</option>
+					<option value="Djibouti">Djibouti</option>
+					<option value="Dominica">Dominica</option>
+					<option value="Dominican Republic">Dominican Republic</option>
+					<option value="Ecuador">Ecuador</option>
+					<option value="Egypt">Egypt</option>
+					<option value="El Salvador">El Salvador</option>
+					<option value="Equatorial Guinea">Equatorial Guinea</option>
+					<option value="Eritrea">Eritrea</option>
+					<option value="Estonia">Estonia</option>
+					<option value="Ethiopia">Ethiopia</option>
+					<option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+					<option value="Faroe Islands">Faroe Islands</option>
+					<option value="Fiji">Fiji</option>
+					<option value="Finland">Finland</option>
+					<option value="France">France</option>
+					<option value="French Guiana">French Guiana</option>
+					<option value="French Polynesia">French Polynesia</option>
+					<option value="French Southern Territories">French Southern Territories</option>
+					<option value="Gabon">Gabon</option>
+					<option value="Gambia">Gambia</option>
+					<option value="Georgia">Georgia</option>
+					<option value="Germany">Germany</option>
+					<option value="Ghana">Ghana</option>
+					<option value="Gibraltar">Gibraltar</option>
+					<option value="Greece">Greece</option>
+					<option value="Greenland">Greenland</option>
+					<option value="Grenada">Grenada</option>
+					<option value="Guadeloupe">Guadeloupe</option>
+					<option value="Guam">Guam</option>
+					<option value="Guatemala">Guatemala</option>
+					<option value="Guernsey">Guernsey</option>
+					<option value="Guinea">Guinea</option>
+					<option value="Guinea-bissau">Guinea-bissau</option>
+					<option value="Guyana">Guyana</option>
+					<option value="Haiti">Haiti</option>
+					<option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+					<option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+					<option value="Honduras">Honduras</option>
+					<option value="Hong Kong">Hong Kong</option>
+					<option value="Hungary">Hungary</option>
+					<option value="Iceland">Iceland</option>
+					<option value="India">India</option>
+					<option value="Indonesia">Indonesia</option>
+					<option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+					<option value="Iraq">Iraq</option>
+					<option value="Ireland">Ireland</option>
+					<option value="Isle of Man">Isle of Man</option>
+					<option value="Israel">Israel</option>
+					<option value="Italy">Italy</option>
+					<option value="Jamaica">Jamaica</option>
+					<option value="Japan">Japan</option>
+					<option value="Jersey">Jersey</option>
+					<option value="Jordan">Jordan</option>
+					<option value="Kazakhstan">Kazakhstan</option>
+					<option value="Kenya">Kenya</option>
+					<option value="Kiribati">Kiribati</option>
+					<option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+					<option value="Korea, Republic of">Korea, Republic of</option>
+					<option value="Kuwait">Kuwait</option>
+					<option value="Kyrgyzstan">Kyrgyzstan</option>
+					<option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+					<option value="Latvia">Latvia</option>
+					<option value="Lebanon">Lebanon</option>
+					<option value="Lesotho">Lesotho</option>
+					<option value="Liberia">Liberia</option>
+					<option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+					<option value="Liechtenstein">Liechtenstein</option>
+					<option value="Lithuania">Lithuania</option>
+					<option value="Luxembourg">Luxembourg</option>
+					<option value="Macao">Macao</option>
+					<option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+					<option value="Madagascar">Madagascar</option>
+					<option value="Malawi">Malawi</option>
+					<option value="Malaysia">Malaysia</option>
+					<option value="Maldives">Maldives</option>
+					<option value="Mali">Mali</option>
+					<option value="Malta">Malta</option>
+					<option value="Marshall Islands">Marshall Islands</option>
+					<option value="Martinique">Martinique</option>
+					<option value="Mauritania">Mauritania</option>
+					<option value="Mauritius">Mauritius</option>
+					<option value="Mayotte">Mayotte</option>
+					<option value="Mexico">Mexico</option>
+					<option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+					<option value="Moldova, Republic of">Moldova, Republic of</option>
+					<option value="Monaco">Monaco</option>
+					<option value="Mongolia">Mongolia</option>
+					<option value="Montenegro">Montenegro</option>
+					<option value="Montserrat">Montserrat</option>
+					<option value="Morocco">Morocco</option>
+					<option value="Mozambique">Mozambique</option>
+					<option value="Myanmar">Myanmar</option>
+					<option value="Namibia">Namibia</option>
+					<option value="Nauru">Nauru</option>
+					<option value="Nepal">Nepal</option>
+					<option value="Netherlands">Netherlands</option>
+					<option value="Netherlands Antilles">Netherlands Antilles</option>
+					<option value="New Caledonia">New Caledonia</option>
+					<option value="New Zealand">New Zealand</option>
+					<option value="Nicaragua">Nicaragua</option>
+					<option value="Niger">Niger</option>
+					<option value="Nigeria">Nigeria</option>
+					<option value="Niue">Niue</option>
+					<option value="Norfolk Island">Norfolk Island</option>
+					<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+					<option value="Norway">Norway</option>
+					<option value="Oman">Oman</option>
+					<option value="Pakistan">Pakistan</option>
+					<option value="Palau">Palau</option>
+					<option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+					<option value="Panama">Panama</option>
+					<option value="Papua New Guinea">Papua New Guinea</option>
+					<option value="Paraguay">Paraguay</option>
+					<option value="Peru">Peru</option>
+					<option value="Philippines">Philippines</option>
+					<option value="Pitcairn">Pitcairn</option>
+					<option value="Poland">Poland</option>
+					<option value="Portugal">Portugal</option>
+					<option value="Puerto Rico">Puerto Rico</option>
+					<option value="Qatar">Qatar</option>
+					<option value="Reunion">Reunion</option>
+					<option value="Romania">Romania</option>
+					<option value="Russian Federation">Russian Federation</option>
+					<option value="Rwanda">Rwanda</option>
+					<option value="Saint Helena">Saint Helena</option>
+					<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+					<option value="Saint Lucia">Saint Lucia</option>
+					<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+					<option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+					<option value="Samoa">Samoa</option>
+					<option value="San Marino">San Marino</option>
+					<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+					<option value="Saudi Arabia">Saudi Arabia</option>
+					<option value="Senegal">Senegal</option>
+					<option value="Serbia">Serbia</option>
+					<option value="Seychelles">Seychelles</option>
+					<option value="Sierra Leone">Sierra Leone</option>
+					<option value="Singapore">Singapore</option>
+					<option value="Slovakia">Slovakia</option>
+					<option value="Slovenia">Slovenia</option>
+					<option value="Solomon Islands">Solomon Islands</option>
+					<option value="Somalia">Somalia</option>
+					<option value="South Africa">South Africa</option>
+					<option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+					<option value="Spain">Spain</option>
+					<option value="Sri Lanka">Sri Lanka</option>
+					<option value="Sudan">Sudan</option>
+					<option value="Suriname">Suriname</option>
+					<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+					<option value="Swaziland">Swaziland</option>
+					<option value="Sweden">Sweden</option>
+					<option value="Switzerland">Switzerland</option>
+					<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+					<option value="Taiwan, Province of China">Taiwan, Province of China</option>
+					<option value="Tajikistan">Tajikistan</option>
+					<option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+					<option value="Thailand">Thailand</option>
+					<option value="Timor-leste">Timor-leste</option>
+					<option value="Togo">Togo</option>
+					<option value="Tokelau">Tokelau</option>
+					<option value="Tonga">Tonga</option>
+					<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+					<option value="Tunisia">Tunisia</option>
+					<option value="Turkey">Turkey</option>
+					<option value="Turkmenistan">Turkmenistan</option>
+					<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+					<option value="Tuvalu">Tuvalu</option>
+					<option value="Uganda">Uganda</option>
+					<option value="Ukraine">Ukraine</option>
+					<option value="United Arab Emirates">United Arab Emirates</option>
+					<option value="United Kingdom">United Kingdom</option>
+					<option value="United States">United States</option>
+					<option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+					<option value="Uruguay">Uruguay</option>
+					<option value="Uzbekistan">Uzbekistan</option>
+					<option value="Vanuatu">Vanuatu</option>
+					<option value="Venezuela">Venezuela</option>
+					<option value="Viet Nam">Viet Nam</option>
+					<option value="Virgin Islands, British">Virgin Islands, British</option>
+					<option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+					<option value="Wallis and Futuna">Wallis and Futuna</option>
+					<option value="Western Sahara">Western Sahara</option>
+					<option value="Yemen">Yemen</option>
+					<option value="Zambia">Zambia</option>
+					<option value="Zimbabwe">Zimbabwe</option>
+				</select>
+				<p>Cascading: the second menu is enabled when an option in the first is chosen.</p>
+				<select id="camera-make" name="camera_make">
+					<option value="Select a manufacturer" selected>Select a manufacturer</option>
+					<option value="Canon">Canon</option>
+					<option value="Nikon">Nikon</option>
+					<option value="Olympus">Olympus</option>
+					<option value="Pentax">Pentax</option>
+				</select>
+				<select id="camera-model" name="camera_model" disabled>
+					<option value="Select a model" selected>Select a model</option>
+				</select>
+				<p>Running an action on open &amp; close. For example, resizing the width.</p>
+				<select id="open-close" name="open_close">
+					<option value="option-1">Option 1</option>
+					<option value="option-2">Option 2</option>
+					<option value="option-3" selected>Option 3</option>
+					<option value="option-4">Option 4</option>
+				</select>
+				<p>
+					A select-multiple menu. Multiple options can be chosen by holding down the CTRL
+					(Command on a Mac) or SHIFT keys.
+				</p>
+				<select name="multiple" multiple>
+					<option value="multiple-1">Multiple option 1</option>
+					<option value="multiple-2" selected>Multiple option 2, selected</option>
+					<option value="multiple-3" selected disabled>Multiple option 3, selected, disabled</option>
+					<optgroup label="Option group">
+						<option value="multiple-4" disabled>Multiple option 4, disabled</option>
+						<option value="multiple-5">Multiple option 5</option>
+					</optgroup>
+				</select>
+
+				<hr>
+
+				<h2>File uploads</h2>
+				<p>
+					In modern browsers, you can limit the size and type of each file. In this demo,
+					you can upload a PNG or JPEG file, up to a limit of 2 Mb. In those same modern
+					browsers, you will also have an upload progress bar as each file is uploaded.
+				</p>
+				<input name="file[]" type="file">
+
+				<hr>
+
+				<h2>Basic text fields</h2>
+				<label>A text field with an in-field label <input name="label-field" size="50"></label><br>
+				<label>Text field with default text <input name="label-field-default" value="Remove this text to see the label" size="50"></label><br>
+				<label>An overflowing label <input name="label-field-overflow" size="12"></label><br>
+				<label>This field's label is not in-field <input name="label-field-outside"></label><br>
+				<label for="textarea-wrap">A textarea with a wrapping in-field label</label>
+				<textarea id="textarea-wrap" name="textarea-wrap" cols="20" rows="2"></textarea>
+
+				<hr>
+
+				<h2>Field validation</h2>
+				<p>
+					Plum has multiple validation methods. It includes three pre-defined matching methods
+					(email, telephone and URL) and two size methods: min and max. You can also match
+					exact strings or create a completely custom method.
+				</p>
+				<p>
+					When a form is submitted, any invalid fields prevent data from being sent. By default,
+					invalid fields have a quick "shake" animation applied to them to alert the user. This
+					is a configurable option, so if you don't like the animation, you can turn it off.
+				</p>
+				<label>Phone number <input id="tel" name="tel" type="tel"></label><br>
+				<label>Email address <input id="email" name="email" type="email"></label><br>
+				<label>URL <input id="url" name="url" type="url"></label>
+				<p>
+					Custom validation example: The two password fields must match and must contain 3
+					letters followed by 3 numbers.
+				</p>
+				<label>Password <input id="password" name="passowrd" type="password"></label><br>
+				<label>Password retype <input id="password-retype" name="password-retype" type="password"></label>
+
+				<hr>
+
+				<h2>Basic buttons</h2>
+				<input type="submit" value="Submit">
+				<button type="button">Button (doesn't do anything)</button>
+				<input type="reset" value="Reset">
+
+			</div>
+			</form>
+
+		</div>
+	</div>
+	<div id="footer">
+		<p>&copy; 2011 RoboCréatif. Created for humans by humans.</p>
+	</div>
+</div>
+
+<script src="demo.js"></script>
+</body>
+</html>

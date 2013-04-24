@@ -1,0 +1,121 @@
+body {
+	background: #EFEFEF;
+	margin: 0;
+	padding: 0;
+	/*body font attributes are defined in text.css, so that they are used in the WYSIWYG editor*/
+}
+
+/* main page DIV*/
+#container {
+	width: 1000px;
+	background-color: #FFF;
+	margin: 0 auto;
+	padding: 0;
+	border: 2px solid #CCC;
+	border-top: 0;
+}
+
+/* page-top banner */
+#header {
+	background-image: url(/images/header_bg.png);
+	background-position: top center;
+	width: auto;
+	height: 150px;
+}
+
+/* logo, in #header */
+#logo {
+	width: auto;
+	position: absolute;
+	margin-top:20px;
+	margin-left:20px;
+	cursor: pointer;
+	/*fonts defined here because I don't have any actual logo in here yet*/
+	color: white;
+	font-size: 36px;
+	line-height: 1.2;
+	font-weight: bold;
+}
+
+/* login form, in #header */
+#login_area {
+	width: auto;
+	height:130px;
+	float:right;
+	margin-top:10px;
+	margin-right:20px;
+	color: white;
+}
+
+#login_area fieldset{
+	border: 1px solid white;
+	padding:5px;
+}
+
+#login_area fieldset legend{
+	color: white;
+	font-weight: bold;
+}
+
+#login_area fieldset ul, fieldset li{
+	border:0; margin:0; padding:0; list-style:none;
+}
+
+#login_area fieldset li{
+	clear:both;
+	list-style:none;
+	padding-bottom:0;
+}
+
+#login_area fieldset input{
+	float:left;
+}
+
+#login_area fieldset label{
+	padding:5px 0 0 0;
+	width:70px;
+	float:left;
+	font-weight: bold;
+	color: white;
+}
+
+/* main navagation menu CONTAINER div */
+#menu {
+	background: -webkit-linear-gradient(top, #ffffff 0%,#e2e2e2 100%);
+	color: #1BB;
+	width: auto;
+	height: 29px;
+	padding: 3px 20px;
+	border-bottom: 1px solid #cacaca;
+}
+
+/* details of ACTUAL MENU styles are in jquery ui theme CSS file, and in jquery-ui-local-overrides.css*/
+
+/*Main content area of the page */
+#content {
+	width: auto;
+	margin: 20px;
+	background: #FFF;
+}
+
+/*Footer*/
+#footer {
+	width: auto;
+	padding: 20px;
+	border-top: 1px solid #cacaca;
+	background-image: url(/images/header_bg.png);
+	background-position: top left;
+	color: white;
+}
+
+/* .clear is defined in 960.css, so  don't do it here again */
+
+/* some padding divs */
+.pad_5 {
+	padding:5px;
+}
+
+.pad_0_5 {
+	padding:0 5px;
+}
+
