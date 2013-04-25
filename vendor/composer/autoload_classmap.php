@@ -446,6 +446,7 @@ return array(
     'Illuminate\\Html\\FormBuilder' => $vendorDir . '/laravel/framework/src/Illuminate/Html/FormBuilder.php',
     'Illuminate\\Html\\HtmlBuilder' => $vendorDir . '/laravel/framework/src/Illuminate/Html/HtmlBuilder.php',
     'Illuminate\\Html\\HtmlServiceProvider' => $vendorDir . '/laravel/framework/src/Illuminate/Html/HtmlServiceProvider.php',
+    'Illuminate\\Http\\JsonResponse' => $vendorDir . '/laravel/framework/src/Illuminate/Http/JsonResponse.php',
     'Illuminate\\Http\\RedirectResponse' => $vendorDir . '/laravel/framework/src/Illuminate/Http/RedirectResponse.php',
     'Illuminate\\Http\\Request' => $vendorDir . '/laravel/framework/src/Illuminate/Http/Request.php',
     'Illuminate\\Http\\Response' => $vendorDir . '/laravel/framework/src/Illuminate/Http/Response.php',
