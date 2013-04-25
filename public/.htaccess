@@ -13,6 +13,7 @@ RewriteCond %{SERVER_PORT} !^443$
 RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [R,L]
 
 # handle custom client domain foo.eportal.commpartners.com
+# as an alias of eportal.commpartners.com/foo
 RewriteCond %{HTTP_HOST} ^foo.eportal.commpartners.com$ [NC]
 RewriteCond %{REQUEST_URI} !^/accounts [NC]
 RewriteCond %{REQUEST_URI} !^/css [NC]
@@ -30,7 +31,7 @@ RewriteCond %{REQUEST_URI} !^/js [NC]
 RewriteRule ^(.*)$ https://l4.eportal.commpartners.com/demo/$1 [P,L]
 
 #RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteRule ^(.+)/$ http://%{HTTP_HOST}/$1 [R=301,L]
+#RewriteRule ^(.+)/$ https://%{HTTP_HOST}/$1 [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [L]
